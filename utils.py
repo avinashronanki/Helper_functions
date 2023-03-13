@@ -8,12 +8,11 @@ import uuid
 # from oauth2client.service_account import ServiceAccountCredentials
 
 
-def add_uuids(df):
+def add_uuids(df, column_name = "id"):
     # Generate a UUID for each row in the DataFrame
     uuids = [uuid.uuid4() for _ in range(len(df))]
     # Add the UUIDs as a new column to the DataFrame
-    df['id'] = uuids
-
+    df[column_name] = uuids
     return df
 
 
